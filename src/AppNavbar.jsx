@@ -16,6 +16,8 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import Rating from '@mui/material/Rating';
+import { Link } from 'react-router-dom';
+import { textAlign } from '@mui/system';
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -168,14 +170,41 @@ function AppNavbar({setSearRating,setSearchName}) {
           >
             <MenuIcon />
           </IconButton>
+          
+          <Typography style={{marginRight:"50px "}}
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ display: { xs: 'none', sm: 'block' } }}
+          >
+            <Link style={{color:"white",textDecoration:"none"}} to="/">HOME</Link>
+          </Typography>
+          <Typography style={{marginRight:"50px "}}
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ display: { xs: 'none', sm: 'block' } }}
+          >
+            <Link style={{color:"white",textDecoration:"none" }} to="Add">Add movie</Link>
+          </Typography>
+          <Typography style={{marginRight:"50px "}}
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ display: { xs: 'none', sm: 'block' } }}
+          >
+            
+            <Link style={{color:"white",textDecoration:"none"}} to="/movies">Movies List</Link>
+          </Typography>
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
+            <Link style={{color:"white",textDecoration:"none"}}>contact us</Link>
           </Typography>
+          
           <Rating
         name="simple-controlled"
         
@@ -190,7 +219,7 @@ function AppNavbar({setSearRating,setSearchName}) {
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
-              onChange={(Movie)=>setSearchName(Movie.target.value)}
+              onChange={(e)=>setSearchName(e.target.value)}
             />
             
           </Search>
